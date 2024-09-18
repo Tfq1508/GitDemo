@@ -30,6 +30,8 @@ public class EndToEndTesting {
 		driver.findElement(By.id("userPassword")).sendKeys("Abc@#123");
 		driver.findElement(By.id("login")).click();
 		
+		//new comments are added
+		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
 		List <WebElement> productNames=driver.findElements(By.cssSelector(".mb-3"));
 		WebElement product=productNames.stream().filter(s-> s.findElement(By.cssSelector("b")).getText().equals("IPHONE 13 PRO")).findFirst().orElse(null);
