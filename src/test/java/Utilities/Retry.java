@@ -1,0 +1,23 @@
+package Utilities;
+
+import org.testng.IRetryAnalyzer;
+import org.testng.ITestResult;
+
+public class Retry implements IRetryAnalyzer{
+	
+	int count=0;
+	int maxtry=1;
+	
+
+	@Override
+	public boolean retry(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+		if(count<maxtry) {
+			count++;
+			return true;
+		}
+		return false;//once it will return false - it won't try any more
+	}
+
+}
